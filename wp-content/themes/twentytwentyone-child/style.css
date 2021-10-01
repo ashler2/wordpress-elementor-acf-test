@@ -1,0 +1,17 @@
+/*
+Theme Name: Twenty Twenty-One Child
+Theme URI: https://example.com/twenty-twenty-one-child/
+Description: Twenty Twenty-One Child Theme
+Author: Ash
+Author URI: https://example.com
+Template: twentytwentyone
+Version: 1.0.0
+License: 
+License URI: 
+Tags: 
+Text Domain: twentytwentyonechild
+*/
+
+.site-title {
+  background-color: red !important;
+}
