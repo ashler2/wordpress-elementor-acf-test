@@ -1,0 +1,13 @@
+
+
+.container {
+
+}
+
+.row {
+  display: flex;
+  [class*="col-"] {
+    margin-left: -0.3px;
+    margin-right: -0.3px;
+  }
+}
