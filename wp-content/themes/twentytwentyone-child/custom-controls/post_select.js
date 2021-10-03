@@ -29,4 +29,4 @@ var postSelectControl = elementor.modules.controls.BaseData.extend({
   },
 });
 
-elementor.addControlView("wpc-post-select", postSelectControl);
+elementor.addControlView("aj-post-select", postSelectControl);

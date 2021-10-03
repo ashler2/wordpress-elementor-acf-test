@@ -1,10 +1,9 @@
 <?php
 
-namespace WPC
+namespace Aj\CustomComponent;
 
-;
-
-
+use Elementor\Widget_Base;
+use Elementor\Controls_Manager;
 
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -12,18 +11,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 
-class Single_Post extends \Elementor\Widget_Base
+class TabbedPosts extends Widget_Base
 {
 
   public function get_name()
   {
-    return 'single-post';
+    return 'tabbed-posts';
   }
 
 
   public function get_title()
   {
-    return 'Single Post';
+    return 'Tabbed Posts';
   }
 
 
@@ -41,16 +40,32 @@ class Single_Post extends \Elementor\Widget_Base
 
     $this->start_controls_section('post_selection', [
         'label' => 'Post Selection',
-        'tab' => \Elementor\Controls_Manager::TAB_CONTENT
+        'tab' => Controls_Manager::TAB_CONTENT
     ]);
 
     $this->add_control('post', [
         'label' => 'Post',
-        'type' => 'wpc-post-select',
+        'type' => 'aj-post-select',
     ]);
 
     $this->end_controls_section();
-   
+
+    $this->start_controls_section('post_selection', [
+      'label' => 'Post Selection',
+      'tab' => Controls_Manager::TAB_CONTENT
+    ]);
+
+    $this->add_control('title', [
+        'label' => 'Title',
+        'type' => Controls_Manager::TEXTAREA,
+        // Needs Pro Version to carry on looking into this.
+        'dynamic' => [
+					'active' => true,
+				],
+
+    ]);
+
+    $this->end_controls_section();
 
   }
 

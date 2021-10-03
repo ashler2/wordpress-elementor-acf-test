@@ -1,17 +1,19 @@
 <?php
 
-namespace WPC;
+namespace AJ\CustomControls;
 
-class Post_Select extends \Elementor\Base_Control {
+use Elementor\Base_Control;
+
+class Post_Select extends Base_Control {
 
     public function get_type() {
-        return 'wpc-post-select';
+        return 'aj-post-select';
     }
 
     public function enqueue()
     {
-        wp_register_script( 'wpc_post_select', get_stylesheet_directory_uri() . '/custom_controls/post_select.js', ['jquery'], '1.0.0', true );
-        wp_enqueue_script( 'wpc_post_select' );
+        wp_register_script( 'aj_post_select', get_stylesheet_directory_uri() . '/custom-controls/post_select.js', ['jquery'], '1.0.0', true );
+        wp_enqueue_script( 'aj_post_select' );
     }
 
     public function content_template() {
